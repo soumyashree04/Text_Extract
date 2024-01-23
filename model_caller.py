@@ -22,7 +22,121 @@ result = poller.result()
 
 
 coordinates=[]
-storage={}
+storage={"Root": {
+        "Branch_Name": [],
+        "Date": [],
+        "Cif_No": [],
+        "Name": [],
+        "Company_Name": [],
+        "Enrollment_Instructions": {
+            "Account_Number": [],
+            "Atm_Card": {
+                "Avail": [],
+                "No_Need": [],
+                "ATM_Card_Number": []
+            },
+            "Mobile_Banking": {
+                "Enroll": [],
+                "No_Need": []
+            },
+            "Online_Banking": {
+                "Enroll": [],
+                "No_Need": [],
+                "User_Id": []
+            },
+            "Preferred_User_Ids": {
+                "Id1": [],
+                "Id2": [],
+                "Id3": []
+            }
+        },
+        "Maintenance_Requests": {
+            "Atm_Card": {
+                "Atm_Card_Number": [],
+                "Request_For_Atm_Card_Replacement":[],
+                "Request_For_Atm_Card_Replacement_With_New_Card_Name": {
+                    "Box": [],
+                    "Atm_Card_Name": []
+                },
+                "Request_For_Atm_Pin": [],
+                "Unlink_Drop_Account_Numbers": {
+                    "Unlink": [],
+                    "Account_Numbers": []
+                },
+                "Close_Atm_Account": {
+                    "Box":[],
+                    "Reason": []
+                }
+               
+            },
+            "Mobile_Banking": {
+                "User_Id": [],
+                "Suspend_Access": [],
+                "Reason": []
+            },
+            "Online_Banking": {
+                "Username":[],
+                "Request_For_Online_Banking_Login": [],
+                "Request_For_Online_Banking_Transaction_Password": [],
+                "Increase_My_Fund_Transfer": [],
+                "Unlink_Drop_Account_Numbers": {
+                    "Unlink": [],
+                    "Account_Numbers": []
+                },
+                "Close_Online_Banking_Account": {
+                    "Box":[],
+                    "Reason": []
+                }
+            },
+            "Phone_Banking": {
+                "Phone_Banking_Account_Number": [],
+                "Request_For_Phone_Banking_Access_Tpin": [],
+                "Request_For_Phone_Banking_Transaction_Tpin": [],
+                "Unlink_Drop_Account_Numbers": {
+                    "Unlink": [],
+                    "Account_Numbers": []
+                },
+                "Link_Drop_Account_Number": {
+                    "Link": [],
+                    "Drop":[],
+                    "Account_Numbers": []
+                },
+                "For_Interbank_Fund_Transfers": {
+                    "Account_Name": [],
+                    "Name_Of_Bank": []
+                }
+            },
+            "Remarks": []
+        },
+        "Receiving_Branch": {
+            "Received_By_Date": [],
+            "Branch_Name": []
+        },
+        "Maintaining_Branch": {
+            "Checked_By_Date": [],
+            "Approved_By_Date": []
+        },
+        "Alternative_Channels_Division": {
+            "Received_By_Date": [],
+            "Processed_By_Date": [],
+            "Checked_By_Date": []
+        },
+        "Customer's_Acknowledgment": {
+            "Atm_Card": {
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            },
+            "Atm_Pin": {
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            },
+            "Phone_Banking_Tpin": {
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            }
+        }
+    }
+}
 for document in result.documents:
     for name, field in document.fields.items():
         value=field.value if field.value else field.content
