@@ -10,6 +10,7 @@ model_id = "abc"
 
 FORM_NAME = "ATAC_Test_3.pdf"
 
+
 document_intelligence_client = DocumentAnalysisClient(
     endpoint=endpoint, credential=AzureKeyCredential(key)
 )
@@ -22,125 +23,183 @@ result = poller.result()
 
 
 coordinates=[]
-storage={"Root": {
-        "Branch_Name": [],
-        "Date": [],
-        "Cif_No": [],
-        "Name": [],
-        "Company_Name": [],
-        "Enrollment_Instructions": {
-            "Account_Number": [],
-            "Atm_Card": {
-                "Avail": [],
-                "No_Need": [],
-                "ATM_Card_Number": []
-            },
-            "Mobile_Banking": {
-                "Enroll": [],
-                "No_Need": []
-            },
-            "Online_Banking": {
-                "Enroll": [],
-                "No_Need": [],
-                "User_Id": []
-            },
-            "Preferred_User_Ids": {
-                "Id1": [],
-                "Id2": [],
-                "Id3": []
-            }
+nested_dict={
+    "Root": {
+      "Atm_Savings": [],
+      "Atm_Checking": [],
+      "Branch": [],
+      "Date_Accomplished": [],
+      "Company_Name": [],
+      "Access_To_Alternative_Channels": {
+        "Mobile_Banking": {
+          "Enroll": [],
+          "No_Need": []
         },
-        "Maintenance_Requests": {
-            "Atm_Card": {
-                "Atm_Card_Number": [],
-                "Request_For_Atm_Card_Replacement":[],
-                "Request_For_Atm_Card_Replacement_With_New_Card_Name": {
-                    "Box": [],
-                    "Atm_Card_Name": []
-                },
-                "Request_For_Atm_Pin": [],
-                "Unlink_Drop_Account_Numbers": {
-                    "Unlink": [],
-                    "Account_Numbers": []
-                },
-                "Close_Atm_Account": {
-                    "Box":[],
-                    "Reason": []
-                }
-               
-            },
-            "Mobile_Banking": {
-                "User_Id": [],
-                "Suspend_Access": [],
-                "Reason": []
-            },
-            "Online_Banking": {
-                "Username":[],
-                "Request_For_Online_Banking_Login": [],
-                "Request_For_Online_Banking_Transaction_Password": [],
-                "Increase_My_Fund_Transfer": [],
-                "Unlink_Drop_Account_Numbers": {
-                    "Unlink": [],
-                    "Account_Numbers": []
-                },
-                "Close_Online_Banking_Account": {
-                    "Box":[],
-                    "Reason": []
-                }
-            },
-            "Phone_Banking": {
-                "Phone_Banking_Account_Number": [],
-                "Request_For_Phone_Banking_Access_Tpin": [],
-                "Request_For_Phone_Banking_Transaction_Tpin": [],
-                "Unlink_Drop_Account_Numbers": {
-                    "Unlink": [],
-                    "Account_Numbers": []
-                },
-                "Link_Drop_Account_Number": {
-                    "Link": [],
-                    "Drop":[],
-                    "Account_Numbers": []
-                },
-                "For_Interbank_Fund_Transfers": {
-                    "Account_Name": [],
-                    "Name_Of_Bank": []
-                }
-            },
-            "Remarks": []
-        },
-        "Receiving_Branch": {
-            "Received_By_Date": [],
-            "Branch_Name": []
-        },
-        "Maintaining_Branch": {
-            "Checked_By_Date": [],
-            "Approved_By_Date": []
-        },
-        "Alternative_Channels_Division": {
-            "Received_By_Date": [],
-            "Processed_By_Date": [],
-            "Checked_By_Date": []
-        },
-        "Customer's_Acknowledgment": {
-            "Atm_Card": {
-                "Issued_By_Date": [],
-                "Received_By_Date": []
-            },
-            "Atm_Pin": {
-                "Issued_By_Date": [],
-                "Received_By_Date": []
-            },
-            "Phone_Banking_Tpin": {
-                "Issued_By_Date": [],
-                "Received_By_Date": []
-            }
+        "Online_Banking": {
+          "Enroll": [],
+          "No_Need": [],
+          "Preferred_User_Id": {
+            "Preferred_User_Id1": [],
+            "Preferred_User_Id2": [],
+            "Preferred_User_Id3": []
+          }
         }
+      },
+      "For_Bank_Use": {
+        "Employee_Cif_No": [],
+        "Employer_Cif_No": [],
+        "Employee_Account_No": [],
+        "Atm_Card_No": [],
+        "Referred_By": [],
+        "Sig_Verified_By_Date": [],
+        "Account_Opened_By_Date": [],
+        "Approved_By_Date": [],
+        "Scanned_By_Date": []
+      },
+      "For_Acd_Use": {
+        "Received_By_Date": [],
+        "Processed_By_Date": [],
+        "Checked_By_Date": [],
+        "Remarks": []
+      },
+      "Employee_Information": {
+        "Name": [],
+        "Gender": {
+          "Male": [],
+          "Female": []
+        },
+        "Date_Of_Birth": [],
+        "Place_Of_Birth": {
+          "Philippines": [],
+          "Others": {
+            "Box": [],
+            "Value": []
+          }
+        },
+        "Nationality": {
+          "Filipino": [],  
+          "Others": {
+            "Box": [],   
+            "Value": []    
+          }
+        },
+        "Civil_Status": {
+          "Single": [],
+          "Married": [],
+          "Separated": [],
+          "Divorced": [],
+          "Widowed": []
+        },
+        "Name_Of_Spouse": [],
+        "Mother_Maiden_Name": [],
+        "Home_Phone_Number": [],
+        "Home_Permanent_Address": [],
+        "Home_Permanent_Address_Zip_Code": [],
+        "Present_Address": {
+            "Same_As_Home_Address": [],
+            "Others": [],
+            "Zipcode":[]
+          },
+        "Mobile_Phone_Number": [],
+        "Email_Address": [],
+        "Tin_Sss": {
+            "Tin":[],
+            "Sss":[],
+            "Value": []
+        },
+        "Occupation": {
+          "Accountant": [],
+          "Custom_Broker": [],
+          "Jeweler": [],
+          "Lawyer": [],
+          "Money_Changer": [],
+          "Others": {
+            "Box": [],
+            "Value": []
+          }
+        },
+        "Employee_Id": [],
+        "Date_Hired": [],
+        "Gross_Monthly_Income": {
+            "Below_PHP_20000": [],
+            "PHP_20000_To_49999": [],
+            "PHP_50000_To_99999": [],
+            "PHP_100000_To_499999": [],
+            "PHP_500000_To_999000": [],
+            "PHP_1000000_And_Above": []
+        },
+        "Employer_Nature_Of_Business": {
+          "Agriculture_Fishing": [],
+          "Admin_Support": [],
+          "Construction": [],
+          "Education": [],
+          "Financial_Insurance": [],
+          "It_Communication": [],
+          "Manufacturing": [],
+          "Mining_Quarrying": [],
+          "Professional_Service": [],
+          "Transportation_Storage": [],
+          "Wholesale_Retail": [],
+          "Others": {
+            "Box": [],
+            "Value": []
+          }
+        },
+        "Work_Business_Address": [],
+        "Work_Business_Phone_Number":[],
+        "Affiliations_With_China_Bank": {
+            "I_Am_A_Director": {
+              "Yes": [],
+              "No": [],
+              "Employee_No": []
+            },
+            "My_Relative_Is_A_Director": {
+              "Yes": [],
+              "No": [],
+              "Name": [],
+              "Relationship": []
+            },
+            "I_Am_Related": {
+              "Yes": [],
+              "No": []
+            },
+            "Relationship_With_Government_Personnel": {
+              "Occupying":[],
+                "Relative": [],
+                "Association": [],
+                "Position": []
+              }
+          },
+        "Residency": {
+          "Resident": [],
+          "Acr_I_Card_No": [],
+          "Non_Resident": []
+        },
+        "Preferred_Mailing_Address": {
+          "Home_Permanent_Address": [],
+          "Present_Address": [],
+          "Work_Business_Address": []
+        }
+      },
+      "Foreign_Account_Tax_Compliance_Act_Information": {
+        "Are_You_Us_Citizen": {
+          "Yes": [],
+          "No": []
+        },
+        "Do_You_Have_Any_Records_In_Us": {
+          "Yes": [],
+          "No": []
+        }
+      }
+    
     }
-}
+} 
+
+storage={}
 for document in result.documents:
     for name, field in document.fields.items():
         value=field.value if field.value else field.content
-        #print(f"{name}={value} [{field.confidence}]")
+        #print(f"{name}={value} [{field.confidence}]")\
         storage[name]=[value,field.confidence]
         if "signature" in name.lower():
             points=field.bounding_regions[0].polygon
@@ -149,17 +208,26 @@ for document in result.documents:
 
 
 nested_dict={}
-
+nested_dict_all={}
 for key, value in storage.items():
     keys_list=key.split("|")
     temp_dict=nested_dict
+    temp_dict_all=nested_dict_all
 
     for k in keys_list[:-1]:
         temp_dict=temp_dict.setdefault(k,{})
+        temp_dict_all=temp_dict_all.setdefault(k,{})
 
-    temp_dict[keys_list[-1]]=value
+    print(f'''{key}=={value}''')
+    if value[1]<0.9:
+      temp_dict[keys_list[-1]]=value
+    temp_dict_all[keys_list[-1]]=value
+    
 json_str = json.dumps(nested_dict, indent=4)
+json_str_all = json.dumps(nested_dict_all, indent=4)
 print(json_str)
+print('-----')
+print(json_str_all)
 print(coordinates)
 
 reader = PdfReader(FORM_NAME)
