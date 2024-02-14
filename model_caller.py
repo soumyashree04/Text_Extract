@@ -25,175 +25,108 @@ result = poller.result()
 coordinates=[]
 nested_dict={
     "Root": {
-      "Atm_Savings": [],
-      "Atm_Checking": [],
-      "Branch": [],
-      "Date_Accomplished": [],
-      "Company_Name": [],
-      "Access_To_Alternative_Channels": {
-        "Mobile_Banking": {
-          "Enroll": [],
-          "No_Need": []
-        },
-        "Online_Banking": {
-          "Enroll": [],
-          "No_Need": [],
-          "Preferred_User_Id": {
-            "Preferred_User_Id1": [],
-            "Preferred_User_Id2": [],
-            "Preferred_User_Id3": []
-          }
-        }
-      },
-      "For_Bank_Use": {
-        "Employee_Cif_No": [],
-        "Employer_Cif_No": [],
-        "Employee_Account_No": [],
-        "Atm_Card_No": [],
-        "Referred_By": [],
-        "Sig_Verified_By_Date": [],
-        "Account_Opened_By_Date": [],
-        "Approved_By_Date": [],
-        "Scanned_By_Date": []
-      },
-      "For_Acd_Use": {
-        "Received_By_Date": [],
-        "Processed_By_Date": [],
-        "Checked_By_Date": [],
-        "Remarks": []
-      },
-      "Employee_Information": {
-        "Name": [],
-        "Gender": {
-          "Male": [],
-          "Female": []
-        },
-        "Date_Of_Birth": [],
-        "Place_Of_Birth": {
-          "Philippines": [],
-          "Others": {
-            "Box": [],
-            "Value": []
-          }
-        },
-        "Nationality": {
-          "Filipino": [],  
-          "Others": {
-            "Box": [],   
-            "Value": []    
-          }
-        },
-        "Civil_Status": {
-          "Single": [],
-          "Married": [],
-          "Separated": [],
-          "Divorced": [],
-          "Widowed": []
-        },
-        "Name_Of_Spouse": [],
-        "Mother_Maiden_Name": [],
-        "Home_Phone_Number": [],
-        "Home_Permanent_Address": [],
-        "Home_Permanent_Address_Zip_Code": [],
-        "Present_Address": {
-            "Same_As_Home_Address": [],
-            "Others": [],
-            "Zipcode":[]
-          },
-        "Mobile_Phone_Number": [],
-        "Email_Address": [],
-        "Tin_Sss": {
-            "Tin":[],
-            "Sss":[],
-            "Value": []
-        },
-        "Occupation": {
-          "Accountant": [],
-          "Custom_Broker": [],
-          "Jeweler": [],
-          "Lawyer": [],
-          "Money_Changer": [],
-          "Others": {
-            "Box": [],
-            "Value": []
-          }
-        },
-        "Employee_Id": [],
-        "Date_Hired": [],
-        "Gross_Monthly_Income": {
-            "Below_PHP_20000": [],
-            "PHP_20000_To_49999": [],
-            "PHP_50000_To_99999": [],
-            "PHP_100000_To_499999": [],
-            "PHP_500000_To_999000": [],
-            "PHP_1000000_And_Above": []
-        },
-        "Employer_Nature_Of_Business": {
-          "Agriculture_Fishing": [],
-          "Admin_Support": [],
-          "Construction": [],
-          "Education": [],
-          "Financial_Insurance": [],
-          "It_Communication": [],
-          "Manufacturing": [],
-          "Mining_Quarrying": [],
-          "Professional_Service": [],
-          "Transportation_Storage": [],
-          "Wholesale_Retail": [],
-          "Others": {
-            "Box": [],
-            "Value": []
-          }
-        },
-        "Work_Business_Address": [],
-        "Work_Business_Phone_Number":[],
-        "Affiliations_With_China_Bank": {
-            "I_Am_A_Director": {
-              "Yes": [],
-              "No": [],
-              "Employee_No": []
+        "Single_Ownership": [],
+        "Sole_Proprietorship": [],
+        "Date_Opened": [],
+        "Cif_Number": [],
+        "Account_Name": [],
+        "Account_Number": [],
+        "Account_To_Be_Opened": {
+            "Atm_Savings": [],
+            "Passbook_Savings": [],
+            "Money_Plus_Savings": [],
+            "China_Check_Plus": [],
+            "Time_Deposit": [],
+            "Diamond_Savings": {
+                "Box": [],
+                "None": [],
+                "Principal_Interest": [],
+                "Principal_Only": {
+                    "Box": [],
+                    "Value": []
+                }
             },
-            "My_Relative_Is_A_Director": {
-              "Yes": [],
-              "No": [],
-              "Name": [],
-              "Relationship": []
-            },
-            "I_Am_Related": {
-              "Yes": [],
-              "No": []
-            },
-            "Relationship_With_Government_Personnel": {
-              "Occupying":[],
-                "Relative": [],
-                "Association": [],
-                "Position": []
-              }
-          },
-        "Residency": {
-          "Resident": [],
-          "Acr_I_Card_No": [],
-          "Non_Resident": []
+                "Others": {
+                    "Box": [],
+                    "Value": []
+            }
+        },
+        "Currency": {
+            "Php": [],
+            "Usd": [],
+            "Eur": [],
+            "Cny": [],
+            "Others": {
+                "Box": [],
+                "Value": []
+            }
+        },
+        "Purpose_of_Account_Opening": {
+            "For_Personal_Transactions": [],
+            "For_Business_Investment_Transactions": []
         },
         "Preferred_Mailing_Address": {
-          "Home_Permanent_Address": [],
-          "Present_Address": [],
-          "Work_Business_Address": []
-        }
-      },
-      "Foreign_Account_Tax_Compliance_Act_Information": {
-        "Are_You_Us_Citizen": {
-          "Yes": [],
-          "No": []
+            "Home_Permanent": [],
+            "Present": [],
+            "Work_Business": [],
+            "Email": []
         },
-        "Do_You_Have_Any_Records_In_Us": {
-          "Yes": [],
-          "No": []
+        "Do_You_Want_To_Avail_Enroll": {
+            "Atm_Card": {
+                "Avail_Link": [],
+                "No_Need": [],
+                "Atm_Card_Number": []
+            },
+            "Mobile_Banking": {
+                "Enroll": [],
+                "No_Need": []
+            },
+            "Online_Banking": {
+                "Enroll_Link": [],
+                "No_Need": [],
+                "User_Id": []
+            },
+            "Preferred_User_Id_1": [],
+            "Preferred_User_Id_2": [],
+            "Preferred_User_Id_3": []
+        },
+        "For_Banks_Use_Only": {
+            "Remarks": [],
+            "Referred_By": {
+                "Box": [],
+                "Value": []
+            },
+            "Account_Opened_By": [],
+            "Signature_Verified_By": [],
+            "Approved_By_Date": []
+        },
+        "Customers_Acknowledgement_Of_Items": {
+            "Atm_Card": {
+                "Box": [],
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            },
+            "Atm_Pin": {
+                "Box": [],
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            },
+            "Passbook": {
+                "Box": [],
+                "Serial_No": [],
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            },
+            "Checkbook": {
+                "Box": [],
+                "Series_No": [],
+                "Issued_By_Date": [],
+                "Received_By_Date": []
+            }  
         }
-      }
-    
     }
-} 
+}
+
 
 storage={}
 for document in result.documents:
@@ -201,14 +134,16 @@ for document in result.documents:
         value=field.value if field.value else field.content
         #print(f"{name}={value} [{field.confidence}]")\
         storage[name]=[value,field.confidence]
-        if "signature" in name.lower():
+        if field.value_type=="signature":
+            print(name,field)
             points=field.bounding_regions[0].polygon
+            temp_list=[]
             for p in points:
-                coordinates.append((p.x*72,p.y*72))
+                temp_list.append((p.x*72,p.y*72))
+            coordinates.append(temp_list)
 
 
-nested_dict={}
-nested_dict_all={}
+nested_dict_all=copy.deepcopy(nested_dict)
 for key, value in storage.items():
     keys_list=key.split("|")
     temp_dict=nested_dict
@@ -230,25 +165,29 @@ print('-----')
 print(json_str_all)
 print(coordinates)
 
-reader = PdfReader(FORM_NAME)
-page = reader.pages[0]
-original_lower_left=page.cropbox.lower_left
-original_lower_right=page.cropbox.lower_right
-original_upper_left=page.cropbox.upper_left
-original_upper_right=page.cropbox.upper_right
+def coordinate_get(idx,c):
+  reader = PdfReader(FORM_NAME)
+  page = reader.pages[0]
+  original_lower_left=page.cropbox.lower_left
+  original_lower_right=page.cropbox.lower_right
+  original_upper_left=page.cropbox.upper_left
+  original_upper_right=page.cropbox.upper_right
 
-height_of_pdf=original_upper_left[1]
-width_of_pdf=original_lower_right[0]
+  height_of_pdf=float(original_upper_left[1])
+  width_of_pdf=original_lower_right[0]
 
-writer = PdfWriter()
-page.mediabox.upper_left = (coordinates[0][0],height_of_pdf-coordinates[0][1])
-page.mediabox.upper_right = (coordinates[1][0],height_of_pdf-coordinates[1][1])
-page.mediabox.lower_right = (coordinates[2][0],height_of_pdf-coordinates[2][1])
-page.mediabox.lower_left = (coordinates[3][0],height_of_pdf-coordinates[3][1])
+  writer = PdfWriter()
+  page.mediabox.upper_left = (c[0][0],height_of_pdf-c[0][1])
+  page.mediabox.upper_right = (c[1][0],height_of_pdf-c[1][1])
+  page.mediabox.lower_right = (c[2][0],height_of_pdf-c[2][1])
+  page.mediabox.lower_left = (c[3][0],height_of_pdf-c[3][1])
 
 
-writer.add_page(page)
+  writer.add_page(page)
 
-with open("output.pdf", "wb") as fp:
-    writer.write(fp)
-    print("done")
+  with open(f"output_{idx}.pdf", "wb") as fp:
+      writer.write(fp)
+      print("done")
+
+for idx,c in enumerate(coordinates):
+    coordinate_get(idx,c)
